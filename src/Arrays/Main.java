@@ -1,17 +1,26 @@
 package Arrays;
 
 import java.util.ArrayList;
+import java.util.ListIterator;
 
 public class Main {
     public static void main(String[] args) {
-        ArrayList<String> list = new ArrayList<>();
-        list.add(0,"Elefant");
-        list.add(1,"Horse");
-        list.add(2,"Lion");
-        list.add(3,"Puma");
-        list.add(4,"Tiger");
-        list.add(5,"Possum");
-        list.add(6,"Hippo");
-        list.add(7,"Chicken");
+        ArrayList<Integer> num = new ArrayList<>();
+
+        for(int i = 0;i <= 10; i++){
+            num.add(i);
+        }
+        System.out.println(num);
+
+        ListIterator iterator = num.listIterator();
+        while(iterator.hasNext()){
+            num.set(iterator.nextIndex(), iterator.nextIndex()+1);
+            System.out.println(iterator.next());
+        }
+
+
+
+
+
     }
 }
