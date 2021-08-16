@@ -11,7 +11,7 @@ public class Vehicle {
         }
     }
 
-    class Door{
+    static class Door{
          void print(){
              System.out.println("door print");
         }

@@ -3,7 +3,7 @@ package Nested;
 public class Main {
     public static void main(String[] args) {
         //Vehicle.Wheel wheel = new Vehicle().new Wheel();
-        Vehicle.Door door = new Vehicle().new Door();
+        Vehicle.Door door = new Vehicle.Door();
         Vehicle.print();
         Vehicle.Wheel.print();
         door.print();

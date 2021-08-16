@@ -1,10 +1,19 @@
 package Implementations;
 
+import java.util.Iterator;
+
 public class Main {
     public static void main(String[] args) {
-        Linked<String> stringLinked = new LinkedContainer<>();
-        stringLinked.addLast("lastElement");
-        System.out.println(stringLinked.size());
-        System.out.println(stringLinked.getElementByIndex(1));
+        LinkedContainer<String> stringLinked = new LinkedContainer<>();
+        stringLinked.addFirst("assdf");
+        stringLinked.addFirst("aswe");
+        stringLinked.addFirst("rr");
+        stringLinked.addFirst("qqq");
+
+
+        Iterator iterator = stringLinked.descendingIterator();
+        while(iterator.hasNext()){
+            System.out.println(iterator.next());
+        }
     }
 }
