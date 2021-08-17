@@ -5,8 +5,16 @@ import java.util.Iterator;
 public class Main {
     public static void main(String[] args) {
         LinkedContainer<String> stringLinked = new LinkedContainer<>();
-        stringLinked.addFirst("assdf");
-        stringLinked.addLast("aswe");
+        stringLinked.addFirst("first");
+//        stringLinked.addFirst("ass");
+//        stringLinked.addFirst("asswww");
+//        stringLinked.addLast("aswe");
+//        stringLinked.addLast("asasssddd");
+//        stringLinked.addLast("astt");
+        stringLinked.addLast("last");
+        stringLinked.addBetween("middle");
+        //stringLinked.addBetween("asddd");
+//        stringLinked.addBetween("aghgs");
 
 
         Iterator iterator = stringLinked.descendingIterator();

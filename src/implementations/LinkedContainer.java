@@ -1,33 +1,58 @@
 package implementations;
 
 import java.util.Iterator;
+import java.util.LinkedList;
 
 public class LinkedContainer<E> implements Linked<E>, Iterable<E>, DescendingIterator<E> {
 
     private Node<E> firstNode;
     private Node<E> lastNode;
+    private Node<E> betweenNode;
     private int size = 0;
 
     public LinkedContainer(){
         lastNode = new Node<>(null,firstNode,null);
         firstNode = new Node<>(null,null,lastNode);
+        betweenNode = new Node<>(null,firstNode,lastNode);
+    }
+
+    @Override
+    public void addBetween(E e){
+        Node<E> middle = betweenNode;
+        middle.setCurrentElement(e);
+        betweenNode = new Node<>(null,firstNode,lastNode);
+        middle.setNextElement(betweenNode);
     }
 
     @Override
     public void addLast(E e) {
-        Node<E> prev = lastNode;
-        prev.setCurrentElement(e);
-        lastNode = new Node<>(null,prev,null);
-        prev.setNextElement(lastNode);
+        if(size == 0){
+            Node<E> prev = lastNode;
+            prev.setCurrentElement(e);
+            lastNode = new Node<>(null,prev,null);
+            prev.setNextElement(lastNode);
+        }else{
+            Node<E> prevLast = lastNode;
+            prevLast.setCurrentElement(e);
+            lastNode = new Node<>(null,prevLast,null);
+            prevLast.setNextElement(lastNode);
+        }
+
         size++;
     }
 
     @Override
     public void addFirst(E e) {
-        Node<E> next = firstNode;
-        next.setCurrentElement(e);
-        firstNode = new Node<>(null,null,next);
-        next.setNextElement(firstNode);
+        if(size == 0){
+            Node<E> next = firstNode;
+            next.setCurrentElement(e);
+            firstNode = new Node<>(null,null,next);
+            next.setNextElement(firstNode);
+        }else{
+            Node<E> nextFirst = firstNode;
+            nextFirst.setCurrentElement(e);
+            firstNode = new Node<>(null,null,nextFirst);
+        }
         size++;
     }
 
