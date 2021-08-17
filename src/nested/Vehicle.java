@@ -1,4 +1,4 @@
-package Nested;
+package nested;
 
 public class Vehicle {
     static void print(){

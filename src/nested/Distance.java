@@ -1,4 +1,4 @@
-package Nested;
+package nested;
 
 public class Distance {
     static double distance;

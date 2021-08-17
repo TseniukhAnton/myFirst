@@ -1,4 +1,4 @@
-package Implementations;
+package implementations;
 
 import java.util.Iterator;
 
@@ -17,7 +17,7 @@ public class LinkedContainer<E> implements Linked<E>, Iterable<E>, DescendingIte
     public void addLast(E e) {
         Node<E> prev = lastNode;
         prev.setCurrentElement(e);
-        lastNode = new Node<E>(null,prev,null);
+        lastNode = new Node<>(null,prev,null);
         prev.setNextElement(lastNode);
         size++;
     }
@@ -26,7 +26,7 @@ public class LinkedContainer<E> implements Linked<E>, Iterable<E>, DescendingIte
     public void addFirst(E e) {
         Node<E> next = firstNode;
         next.setCurrentElement(e);
-        firstNode = new Node<E>(null,null,next);
+        firstNode = new Node<>(null,null,next);
         next.setNextElement(firstNode);
         size++;
     }

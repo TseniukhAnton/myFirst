@@ -1,4 +1,4 @@
-package Implementations;
+package implementations;
 
 public interface Linked<E> {
     void addLast(E e);

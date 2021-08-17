@@ -1,4 +1,4 @@
-package Nested;
+package nested;
 
 public class Calculator {
     public double add(double a, double b){
