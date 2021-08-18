@@ -7,21 +7,27 @@ public class LinkedContainer<E> implements Linked<E>, Iterable<E>, DescendingIte
 
     private Node<E> firstNode;
     private Node<E> lastNode;
-    private Node<E> betweenNode;
     private int size = 0;
 
     public LinkedContainer(){
         lastNode = new Node<>(null,firstNode,null);
         firstNode = new Node<>(null,null,lastNode);
-        betweenNode = new Node<>(null,firstNode,lastNode);
     }
 
-    @Override
-    public void addBetween(E e){
-        Node<E> middle = betweenNode;
-        middle.setCurrentElement(e);
-        betweenNode = new Node<>(null,firstNode,lastNode);
-        middle.setNextElement(betweenNode);
+    //@Override
+    public void addMiddle(E e){
+        if(size <= 1){
+            Node<E> middleFirst = lastNode;
+            middleFirst.setCurrentElement(e);
+            lastNode = new Node<>(null,middleFirst,null);
+            middleFirst.setNextElement(lastNode);
+        }else{
+            Node<E> middle = lastNode.prevElement;
+            middle.setCurrentElement(e);
+            Node<E> newNode = new Node<>(null,lastNode.prevElement,lastNode);
+            middle.setNextElement(newNode);
+        }
+        size++;
     }
 
     @Override
