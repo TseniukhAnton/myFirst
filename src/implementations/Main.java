@@ -16,8 +16,8 @@ public class Main {
         stringLinked.addMiddle("middleF");
         stringLinked.addMiddle("middleL");
         stringLinked.addMiddle("middleMiddle");
-        stringLinked.addMiddle("middleMiddle1");
-        stringLinked.addMiddle("middleMiddle2");
+//        stringLinked.addMiddle("middleMiddle1");
+//        stringLinked.addMiddle("middleMiddle2");
 
 
         Iterator iterator = stringLinked.descendingIterator();

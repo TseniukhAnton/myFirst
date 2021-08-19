@@ -23,9 +23,12 @@ public class LinkedContainer<E> implements Linked<E>, Iterable<E>, DescendingIte
             middleFirst.setNextElement(lastNode);
         }else{
             Node<E> middle = lastNode.prevElement;
+            Node<E> newLast = lastNode;
             middle.setCurrentElement(e);
             Node<E> newNode = new Node<>(null,lastNode.prevElement,lastNode);
+            newLast = new Node<>(null,newLast,null);
             middle.setNextElement(newNode);
+            newLast.setNextElement(lastNode);
         }
         size++;
     }
