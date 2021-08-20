@@ -14,10 +14,10 @@ public class Main {
 //        stringLinked.addLast("asasssddd");
 //        stringLinked.addLast("astt");
 //        stringLinked.addLast("last");
-        stringLinked.addMiddle("middleF");
-        stringLinked.addMiddle("middleL");
-        stringLinked.addMiddle("middleMiddle");
-//        stringLinked.addMiddle("middleMiddle1");
+        stringLinked.addInside("middleF");
+        stringLinked.addInside("middleL");
+        //stringLinked.addInside("middleMiddle");
+        //stringLinked.addInside("middleMiddle1");
 //        stringLinked.addMiddle("middleMiddle2");
 
 
