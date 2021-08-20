@@ -3,6 +3,7 @@ package implementations;
 import java.util.Iterator;
 
 public class Main {
+
     public static void main(String[] args) {
         LinkedContainer<String> stringLinked = new LinkedContainer<>();
 
