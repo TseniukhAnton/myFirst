@@ -1,7 +1,6 @@
 package implementations;
 
 import java.util.Iterator;
-import java.util.LinkedList;
 
 public class LinkedContainer<E> implements Linked<E>, Iterable<E>, DescendingIterator<E> {
 
@@ -9,25 +8,29 @@ public class LinkedContainer<E> implements Linked<E>, Iterable<E>, DescendingIte
     private Node<E> lastNode;
     private int size = 0;
 
-    public LinkedContainer(){
-        lastNode = new Node<>(null,firstNode,null);
-        firstNode = new Node<>(null,null,lastNode);
+    public LinkedContainer() {
+        lastNode = new Node<>(null, firstNode, null);
+        firstNode = new Node<>(null, null, lastNode);
     }
 
     @Override
-    public void addInside(E e){
-        if(size == 0){
-            firstNode = new Node<>(e,null,null);
-        }else if(size == 1){
+    public void addInside(E e) {
+        if (size == 0) {
+            Node<E> first = firstNode;
+            first.setCurrentElement(e);
+            firstNode = new Node<>(e, null, null);
+            firstNode.setNextElement(first);
+        } else if (size == 1) {
             Node<E> currentFirst = firstNode;
             currentFirst.setCurrentElement(e);
-            firstNode = new Node<>(e,null,currentFirst);
+            firstNode = new Node<>(e, null, currentFirst);
             lastNode = currentFirst;
             lastNode.setPrevElement(firstNode);
-        }else{
+        } else {
             Node<E> currentMiddle = lastNode.prevElement;
-            currentMiddle.setCurrentElement(e);
-            Node<E> newNode = new Node<>(e,currentMiddle,lastNode);
+            Node<E> newNode = new Node<>(e, currentMiddle, lastNode);
+            lastNode.prevElement = newNode;
+            //currentMiddle.setCurrentElement(e);
             currentMiddle.setNextElement(newNode);
             lastNode.setPrevElement(newNode);
         }
@@ -36,15 +39,15 @@ public class LinkedContainer<E> implements Linked<E>, Iterable<E>, DescendingIte
 
     @Override
     public void addLast(E e) {
-        if(size == 0){
+        if (size == 0) {
             Node<E> prev = lastNode;
             prev.setCurrentElement(e);
-            lastNode = new Node<>(null,prev,null);
+            lastNode = new Node<>(null, prev, null);
             prev.setNextElement(lastNode);
-        }else{
+        } else {
             Node<E> prevLast = lastNode;
             prevLast.setCurrentElement(e);
-            lastNode = new Node<>(null,prevLast,null);
+            lastNode = new Node<>(null, prevLast, null);
             prevLast.setNextElement(lastNode);
         }
 
@@ -53,15 +56,15 @@ public class LinkedContainer<E> implements Linked<E>, Iterable<E>, DescendingIte
 
     @Override
     public void addFirst(E e) {
-        if(size == 0){
+        if (size == 0) {
             Node<E> next = firstNode;
             next.setCurrentElement(e);
-            firstNode = new Node<>(null,null,next);
+            firstNode = new Node<>(null, null, next);
             next.setNextElement(firstNode);
-        }else{
+        } else {
             Node<E> nextFirst = firstNode;
             nextFirst.setCurrentElement(e);
-            firstNode = new Node<>(null,null,nextFirst);
+            firstNode = new Node<>(null, null, nextFirst);
         }
         size++;
     }
@@ -74,13 +77,13 @@ public class LinkedContainer<E> implements Linked<E>, Iterable<E>, DescendingIte
     @Override
     public E getElementByIndex(int counter) {
         Node<E> target = firstNode.getNextElement();
-        for(int i = 0;i < counter;i++){
+        for (int i = 0; i < counter; i++) {
             target = getNextElement(target);
         }
         return target.getCurrentElement();
     }
 
-    private Node<E> getNextElement(Node<E> current){
+    private Node<E> getNextElement(Node<E> current) {
         return current.getNextElement();
     }
 
@@ -118,7 +121,7 @@ public class LinkedContainer<E> implements Linked<E>, Iterable<E>, DescendingIte
         };
     }
 
-    private class Node<E>{
+    private class Node<E> {
         private E currentElement;
         private Node<E> nextElement;
         private Node<E> prevElement;

@@ -14,15 +14,17 @@ public class Main {
 //        stringLinked.addLast("asasssddd");
 //        stringLinked.addLast("astt");
 //        stringLinked.addLast("last");
-        stringLinked.addInside("middleF");
-        stringLinked.addInside("middleL");
-        //stringLinked.addInside("middleMiddle");
-        //stringLinked.addInside("middleMiddle1");
-//        stringLinked.addMiddle("middleMiddle2");
+        stringLinked.addInside("A");
+        stringLinked.addInside("B");
+        stringLinked.addInside("C");
+        stringLinked.addInside("D");
+        stringLinked.addInside("E");
+        stringLinked.addInside("Z");
+        stringLinked.addInside("M");
 
 
         Iterator iterator = stringLinked.descendingIterator();
-        while(iterator.hasNext()){
+        while (iterator.hasNext()) {
             System.out.println(iterator.next());
         }
         System.out.println(stringLinked.size());
