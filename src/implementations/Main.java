@@ -19,8 +19,8 @@ public class Main {
         stringLinked.addInside("C");
         stringLinked.addInside("D");
         stringLinked.addInside("E");
-        stringLinked.addInside("Z");
-        stringLinked.addInside("M");
+        stringLinked.addInside("F");
+        stringLinked.addInside("G");
 
 
         Iterator iterator = stringLinked.descendingIterator();
