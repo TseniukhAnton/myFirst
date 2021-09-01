@@ -2,8 +2,7 @@ package SimpleArrayListDemo;
 
 import java.util.Iterator;
 
-public class SimpleArray<E> implements Simple<E> {
-    private int index;
+public class SimpleArray<E> implements Simple<E> { 
     private E[] values;
 
     public SimpleArray() {
@@ -56,4 +55,6 @@ public class SimpleArray<E> implements Simple<E> {
     public Iterator<E> iterator() {
         return new ArrayIterator<>(values);
     }
+
+
 }

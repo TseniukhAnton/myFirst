@@ -1,5 +1,7 @@
 package SimpleArrayListDemo;
 
+import java.util.Arrays;
+
 public class SimpleArrayDemo {
     public static void main(String[] args) {
         Simple<String> strings = new SimpleArray<>();
@@ -9,5 +11,9 @@ public class SimpleArrayDemo {
         strings.update(1, "update");
         System.out.println(strings.get(1));
         System.out.println(strings.size());
+
+        for (String s : strings) {
+            System.out.println(s);
+        }
     }
 }
