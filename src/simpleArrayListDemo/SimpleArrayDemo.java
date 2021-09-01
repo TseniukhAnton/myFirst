@@ -1,6 +1,4 @@
-package SimpleArrayListDemo;
-
-import java.util.Arrays;
+package simpleArrayListDemo;
 
 public class SimpleArrayDemo {
     public static void main(String[] args) {

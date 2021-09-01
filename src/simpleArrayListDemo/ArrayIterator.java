@@ -1,4 +1,4 @@
-package SimpleArrayListDemo;
+package simpleArrayListDemo;
 
 import java.util.Iterator;
 

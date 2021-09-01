@@ -1,4 +1,4 @@
-package SimpleImmutable;
+package simpleImmutable;
 
 public final class SimpleImmutableClass {
     private final String firstName;

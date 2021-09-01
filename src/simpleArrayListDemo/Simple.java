@@ -1,4 +1,4 @@
-package SimpleArrayListDemo;
+package simpleArrayListDemo;
 
 public interface Simple<E> extends Iterable<E>{
     boolean add(E e);
